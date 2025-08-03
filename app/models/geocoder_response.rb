@@ -8,6 +8,10 @@ class GeocoderResponse
     @result = result
   end
 
+  def valid?
+    latitude.present? && longitude.present?
+  end
+
   def latitude
     @result.latitude
   end
@@ -32,19 +36,7 @@ class GeocoderResponse
     @result.country
   end
 
-  def state
-    @result.state
-  end
-
   def postal_code
     @result.postal_code
-  end
-
-  def country
-    @result.country
-  end
-
-  def formatted_address
-    "#{address}, #{city}, #{state} #{postal_code}, #{country}"
   end
 end
