@@ -53,6 +53,8 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
   gem "factory_bot_rails", "~> 6.2"
   gem "rspec-rails", "6.1.2"
+  gem "listen"
+  gem "dotenv-rails"
 end
 
 group :development do
