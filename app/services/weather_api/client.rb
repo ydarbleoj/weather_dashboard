@@ -19,19 +19,18 @@ module WeatherApi
       }
 
       response = self.class.get("/forecast.json", query: query)
-      response_handler(response)
+      parse_response(response)
     rescue HTTParty::Error => e
-      Rails.logger.error("OpenWeather API error: #{e.message}")
-      { error: e.message }
+      Response.new(error: response.message, code: response.code)
     end
 
     private
 
-    def response_handler(response)
+    def parse_response(response)
       if response.success?
-        response.parsed_response
+        Response.new(data: response.parsed_response)
       else
-        { error: response.message, code: response.code }
+        Response.new(error: response.message, code: response.code)
       end
     end
   end

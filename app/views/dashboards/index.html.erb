@@ -1,14 +1,14 @@
 <header class="location-header">
-  <h1><%= @city %></h1>
   <p><%= @address %></p>
 </header>
 
 <div class="weather-container">
   <div class="current-weather">
-    <%= render "dashboards/forecast" %>
+    <%= render "dashboards/forecast", forecast: @current_weather %>
   </div>
 
   <div class="forecast-details">
+    <%= render partial: "dashboards/forecast", collection: @forecast_weather, as: :forecast %>
   </div>
 </div>
 

@@ -15,10 +15,11 @@ RSpec.describe WeatherApi::Client do
       it "returns a successful response" do
         VCR.use_cassette("weather_api/success/portland") do
           response = @described_class.fetch(lat: @lat, lon: @lon)
+          data = response.data
 
-          expect(response).to have_key("location")
-          expect(response).to have_key("current")
-          expect(response).to have_key("forecast")
+          expect(data).to have_key("location")
+          expect(data).to have_key("current")
+          expect(data).to have_key("forecast")
         end
       end
     end
@@ -33,8 +34,8 @@ RSpec.describe WeatherApi::Client do
         VCR.use_cassette("weather_api/failure/invalid_coordinates") do
           response= @described_class.fetch(lat: @lat, lon: @lon)
 
-          expect(response[:code]).to eq(400)
-          expect(response[:error]).to eq("Bad Request")
+          expect(response.code).to eq(400)
+          expect(response.error).to eq("Bad Request")
         end
       end
     end

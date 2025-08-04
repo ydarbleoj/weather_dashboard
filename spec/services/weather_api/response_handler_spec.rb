@@ -11,7 +11,7 @@ RSpec.describe WeatherApi::ResponseHandler do
     end
 
     before do
-      @described_class = described_class.new(@response)
+      @described_class = described_class.new(@response.data)
 
       @current_weather = @described_class.current_weather
       @forecast = @described_class.forecast_weather

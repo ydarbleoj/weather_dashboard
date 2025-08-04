@@ -7,7 +7,6 @@ class GeocoderFactory
     response = GeocoderResponse.new(result)
     response if response.valid?
   rescue StandardError => e
-    Rails.logger.error("Geocoding error: #{e.message}")
     nil
   end
 end
