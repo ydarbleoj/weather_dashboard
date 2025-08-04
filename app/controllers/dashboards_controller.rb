@@ -32,6 +32,7 @@ class DashboardsController < ApplicationController
 
   def cache_present?
     return false if weather_cache_key.blank?
+
     Rails.cache.exist?(weather_cache_key)
   end
 
