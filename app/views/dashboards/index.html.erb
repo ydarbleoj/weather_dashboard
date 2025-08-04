@@ -4,12 +4,17 @@
 
 <div class="weather-container">
   <div class="current-weather">
-    <%= render "dashboards/forecast", forecast: @current_weather %>
+    <% if @current_weather.present? %>
+      <%= render "dashboards/forecast", forecast: @current_weather %>
+    <% end %>
   </div>
 
-  <div class="forecast-details">
-    <%= render partial: "dashboards/forecast", collection: @forecast_weather, as: :forecast %>
-  </div>
+  <% if @forecast_weather.present? %>
+    <div class="forecast-details">
+      <h2>3 Day Forecast</h2>
+      <%= render partial: "dashboards/forecast", collection: @forecast_weather, as: :forecast %>
+    </div>
+  <% end %>
 </div>
 
 <footer class="search-bar-container">

@@ -18,7 +18,7 @@ RSpec.describe WeatherApi::ResponseHandler do
     end
 
     it "is valid" do
-      expect(@described_class.valid?).to be_truthy
+      expect(@described_class.error?).to be_falsey
     end
 
     it "returns the current weather" do

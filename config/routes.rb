@@ -7,5 +7,6 @@ Rails.application.routes.draw do
 
   root "dashboards#index"
 
+  match '/.well-known/*path', to: proc { [204, {}, ['']] }, via: :all
   get "*all", to: "dashboards#index"
 end

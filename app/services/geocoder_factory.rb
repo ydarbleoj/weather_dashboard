@@ -5,7 +5,7 @@ class GeocoderFactory
     return if results.blank?
 
     response = GeocoderResponse.new(result)
-    response if response.valid?
+    response unless response.error?
   rescue StandardError => e
     nil
   end

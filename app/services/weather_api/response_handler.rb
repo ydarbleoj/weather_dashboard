@@ -12,8 +12,8 @@ module WeatherApi
       forecastday[1..-1].map { |day| Weather.new(day) }
     end
 
-    def valid?
-      forecastday? && current?
+    def error?
+      current_empty? || forecastday_empty?
     end
 
     private
@@ -38,12 +38,12 @@ module WeatherApi
       forecast["forecastday"]
     end
 
-    def current?
-      current.present? && current_temp.present?
+    def current_empty?
+      current.blank? && current_temp.blank?
     end
 
-    def forecastday?
-      forecast.present? && forecastday.present?
+    def forecastday_empty?
+      forecast.blank? && forecastday.blank?
     end
   end
 end

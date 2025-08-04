@@ -1,15 +1,12 @@
 class GeocoderResponse
   attr_reader :result
 
-  # This is typically the result from a geocoding service like Geocoder::Result::Google or similar.
-  #
-  # @param result [Object] The result object from a geocoding service.
   def initialize(result)
     @result = result
   end
 
-  def valid?
-    latitude.present? && longitude.present?
+  def error?
+    latitude.blank? && longitude.blank?
   end
 
   def latitude

@@ -2,18 +2,17 @@ class DashboardsController < ApplicationController
   def index
     @current_weather = nil
     @forecast_weather = []
+    @address = "Please enter a valid address."
 
-    if geocoder_response.valid?
-      weather_forecast = WeatherApi::Factory.build(lat: latitude, lon: longitude)
-      if weather_forecast.error.present?
-        @address = weather_forecast.error
-      else
-        @current_weather = weather_forecast.current_weather
-        @forecast_weather = weather_forecast.forecast_weather
-        @address = geocoder_response.address
-      end
+    return @address if geocoder_response.blank?
+
+    response = WeatherApi::Factory.build(lat: latitude, lon: longitude)
+    if response.error?
+      @address = response.error
     else
-      @address = "Please enter a valid address."
+      @current_weather = response.current_weather
+      @forecast_weather = response.forecast_weather
+      @address = geocoder_response.address
     end
   end
 
