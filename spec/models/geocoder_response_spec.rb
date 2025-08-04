@@ -20,15 +20,15 @@ RSpec.describe GeocoderResponse do
     end
 
     it "is valid" do
-      expect(@described_class.valid?).to be_truthy
+      expect(@described_class.error?).to be_falsey
     end
 
     it "returns the latitude" do
-      expect(@described_class.latitude).to eq(37.7749)
+      expect(@described_class.latitude).to eq(45.5202471)
     end
 
     it "returns the longitude" do
-      expect(@described_class.longitude).to eq(-122.4194)
+      expect(@described_class.longitude).to eq(-122.674194)
     end
 
     it "returns the address" do
@@ -71,7 +71,7 @@ RSpec.describe GeocoderResponse do
     end
 
     it "is invalid" do
-      expect(@described_class.valid?).to be_falsey
+      expect(@described_class.error?).to be_truthy
     end
   end
 end

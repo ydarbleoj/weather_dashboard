@@ -1,6 +1,6 @@
 class GeocoderFactory
   def self.build(address)
-    results = Geocoder.search(address)
+    results = Geocoder.search(address, params: { countrycodes: "us" })
     result = results.first
     return if results.blank?
 

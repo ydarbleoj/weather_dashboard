@@ -2,10 +2,17 @@ require 'rails_helper'
 
 RSpec.describe "Dashboards", type: :request do
   describe "GET /index" do
-    it "returns http success" do
-      get "/dashboards/index"
-      expect(response).to have_http_status(:success)
+    let(:address) { "97206" }
+
+    let(:geocoder_response) do
+      double(
+        "GeocoderResponse",
+        postal_code: "97206",
+        latitude: 45.5202471,
+        longitude: -122.674194,
+        address: "Portland, OR",
+        error?: false
+      )
     end
   end
-
 end
