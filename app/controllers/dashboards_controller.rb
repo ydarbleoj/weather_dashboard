@@ -3,7 +3,8 @@ class DashboardsController < ApplicationController
     @address = "Please enter a valid address."
     return @address if geocoder_response.blank?
 
-    weather_response = Rails.cache.fetch("weather_response/#{geocoder_response.postal_code}", expires_in: 30.minutes) do
+    @cache_present = Rails.cache.exist?(weather_cache_key)
+    weather_response = Rails.cache.fetch(weather_cache_key, expires_in: 30.minutes) do
        WeatherApi::Factory.build(lat: latitude, lon: longitude)
     end
 
@@ -18,6 +19,10 @@ class DashboardsController < ApplicationController
 
   private
 
+  def weather_cache_key
+    "weather_response/#{geocoder_response.postal_code}"
+  end
+
   def longitude
     @geocoder_response.longitude
   end
@@ -27,9 +32,7 @@ class DashboardsController < ApplicationController
   end
 
   def geocoder_response
-    @geocoder_response ||= Rails.cache.fetch("geocoder_response/#{dashboard_params[:address] || 'Portland, OR'}", expires_in: 24.hours) do
-      GeocoderFactory.build(dashboard_params[:address] || "Portland, OR")
-    end
+    @geocoder_response ||= GeocoderFactory.build(dashboard_params[:address] || "Portland, OR")
   end
 
   def dashboard_params

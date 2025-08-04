@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://api.opencagedata.com/geocode/v1/json?key=721a2b1a7e794c5cb41686bd0c020144&language=en&q=Portland,%20OR
+    uri: http://api.opencagedata.com/geocode/v1/json?countrycodes=us&key=721a2b1a7e794c5cb41686bd0c020144&language=en&q=Portland,%20OR
     body:
       encoding: US-ASCII
       string: ''
@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sun, 03 Aug 2025 21:51:35 GMT
+      - Mon, 04 Aug 2025 15:49:26 GMT
       Server:
       - Apache
       Access-Control-Allow-Origin:
@@ -27,9 +27,9 @@ http_interactions:
       X-Ratelimit-Limit:
       - '2500'
       X-Ratelimit-Remaining:
-      - '2497'
+      - '2361'
       X-Ratelimit-Reset:
-      - '1754265600'
+      - '1754352000'
       Vary:
       - Accept-Encoding
       X-Frame-Options:
@@ -45,13 +45,13 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: '{"documentation":"https://opencagedata.com/api","licenses":[{"name":"see
-        attribution guide","url":"https://opencagedata.com/credits"}],"rate":{"limit":2500,"remaining":2497,"reset":1754265600},"results":[{"annotations":{"DMS":{"lat":"45\u00b0
+        attribution guide","url":"https://opencagedata.com/credits"}],"rate":{"limit":2500,"remaining":2361,"reset":1754352000},"results":[{"annotations":{"DMS":{"lat":"45\u00b0
         31'' 12.88956'''' N","lng":"122\u00b0 40'' 27.09840'''' W"},"FIPS":{"county":"41051","state":"41"},"MGRS":"10TER2544540797","Maidenhead":"CN85pm94cu","Mercator":{"x":-13656028.81,"y":5673299.6},"OSM":{"edit_url":"https://www.openstreetmap.org/edit?relation=186579#map=17/45.52025/-122.67419","note_url":"https://www.openstreetmap.org/note/new#map=17/45.52025/-122.67419&layers=N","url":"https://www.openstreetmap.org/?mlat=45.52025&mlon=-122.67419#map=17/45.52025/-122.67419"},"UN_M49":{"regions":{"AMERICAS":"019","NORTHERN_AMERICA":"021","US":"840","WORLD":"001"},"statistical_groupings":["MEDC"]},"callingcode":1,"currency":{"alternate_symbols":["US$"],"decimal_mark":".","disambiguate_symbol":"US$","html_entity":"$","iso_code":"USD","iso_numeric":"840","name":"United
-        States Dollar","smallest_denomination":1,"subunit":"Cent","subunit_to_unit":100,"symbol":"$","symbol_first":1,"thousands_separator":","},"flag":"\ud83c\uddfa\ud83c\uddf8","geohash":"c20fbqxqsj54g49jyfj6","qibla":17.47,"roadinfo":{"drive_on":"right","speed_in":"mph"},"sun":{"rise":{"apparent":1754225940,"astronomical":1754218440,"civil":1754223900,"nautical":1754221380},"set":{"apparent":1754192040,"astronomical":1754199480,"civil":1754194020,"nautical":1754196600}},"timezone":{"name":"America/Los_Angeles","now_in_dst":1,"offset_sec":-25200,"offset_string":"-0700","short_name":"PDT"},"what3words":{"words":"locker.caves.bunks"},"wikidata":"Q6106"},"bounds":{"northeast":{"lat":45.6528812,"lng":-122.4720252},"southwest":{"lat":45.432536,"lng":-122.8367489}},"components":{"ISO_3166-1_alpha-2":"US","ISO_3166-1_alpha-3":"USA","ISO_3166-2":["US-OR"],"_category":"place","_normalized_city":"Portland","_type":"city","city":"Portland","continent":"North
+        States Dollar","smallest_denomination":1,"subunit":"Cent","subunit_to_unit":100,"symbol":"$","symbol_first":1,"thousands_separator":","},"flag":"\ud83c\uddfa\ud83c\uddf8","geohash":"c20fbqxqsj54g49jyfj6","qibla":17.47,"roadinfo":{"drive_on":"right","speed_in":"mph"},"sun":{"rise":{"apparent":1754312400,"astronomical":1754304960,"civil":1754310420,"nautical":1754307840},"set":{"apparent":1754278320,"astronomical":1754285760,"civil":1754280360,"nautical":1754282880}},"timezone":{"name":"America/Los_Angeles","now_in_dst":1,"offset_sec":-25200,"offset_string":"-0700","short_name":"PDT"},"what3words":{"words":"locker.caves.bunks"},"wikidata":"Q6106"},"bounds":{"northeast":{"lat":45.6528812,"lng":-122.4720252},"southwest":{"lat":45.432536,"lng":-122.8367489}},"components":{"ISO_3166-1_alpha-2":"US","ISO_3166-1_alpha-3":"USA","ISO_3166-2":["US-OR"],"_category":"place","_normalized_city":"Portland","_type":"city","city":"Portland","continent":"North
         America","country":"United States","country_code":"us","county":"Multnomah
         County","state":"Oregon","state_code":"OR"},"confidence":4,"formatted":"Portland,
         Oregon, United States of America","geometry":{"lat":45.5202471,"lng":-122.674194}}],"status":{"code":200,"message":"OK"},"stay_informed":{"blog":"https://blog.opencagedata.com","mastodon":"https://en.osm.town/@opencage"},"thanks":"For
-        using an OpenCage API","timestamp":{"created_http":"Sun, 03 Aug 2025 21:51:36
-        GMT","created_unix":1754257896},"total_results":1}'
-  recorded_at: Sun, 03 Aug 2025 21:51:36 GMT
+        using an OpenCage API","timestamp":{"created_http":"Mon, 04 Aug 2025 15:49:26
+        GMT","created_unix":1754322566},"total_results":1}'
+  recorded_at: Mon, 04 Aug 2025 15:49:26 GMT
 recorded_with: VCR 6.3.1

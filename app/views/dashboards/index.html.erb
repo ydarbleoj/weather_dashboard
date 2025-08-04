@@ -19,6 +19,10 @@
 
 <footer class="search-bar-container">
   <%= form_with url: root_path, method: :get do |form| %>
+    <% if @cache_present %>
+      <span class="cache-present">Cached Data</span>
+    <% end %>
+
     <%= form.text_field :address, placeholder: "Enter an address", class: "search-input" %>
     <%= form.submit "Search", class: "search-button" %>
   <% end %>
