@@ -5,8 +5,8 @@ RSpec.describe GeocoderResponse do
     let(:valid_result) do
       double(
         "Geocoder::Result",
-        latitude: 37.7749,
-        longitude: -122.4194,
+        latitude: 45.5202471,
+        longitude: -122.674194,
         address: "2808 SE 59th ave",
         city: "Portland",
         state: nil,
